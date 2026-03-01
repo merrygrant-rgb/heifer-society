@@ -1,0 +1,76 @@
+---
+layout: base.njk
+title: Contact
+---
+
+<div class="pt-24 pb-20 px-6">
+  <div class="max-w-3xl mx-auto">
+    <a href="/" class="flex items-center gap-2 text-text-secondary hover:text-charcoal transition-colors mb-12">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      Back
+    </a>
+    
+    <div>
+      <div class="text-center mb-12">
+        <span class="text-micro text-oxblood mb-4 block">Contact</span>
+        <h1 class="font-serif text-headline-sm text-charcoal mb-4">
+          Write to Us.
+        </h1>
+        <p class="font-sans text-text-secondary">
+          Collaborations, questions, or just a note—our inbox is open.
+        </p>
+      </div>
+      
+      <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+        <div>
+          <label class="text-micro text-text-secondary block mb-2">NAME</label>
+          <input 
+            type="text"
+            name="name"
+            required
+            class="w-full bg-transparent border-b border-charcoal/20 py-3 text-charcoal focus:outline-none focus:border-oxblood transition-colors"
+          />
+        </div>
+        <div>
+          <label class="text-micro text-text-secondary block mb-2">EMAIL</label>
+          <input 
+            type="email"
+            name="email"
+            required
+            class="w-full bg-transparent border-b border-charcoal/20 py-3 text-charcoal focus:outline-none focus:border-oxblood transition-colors"
+          />
+        </div>
+        <div>
+          <label class="text-micro text-text-secondary block mb-2">MESSAGE</label>
+          <textarea 
+            name="message"
+            required
+            rows="5"
+            class="w-full bg-transparent border-b border-charcoal/20 py-3 text-charcoal focus:outline-none focus:border-oxblood transition-colors resize-none"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn-primary">
+          Send Message
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </form>
+      
+      <div class="mt-16 pt-12 border-t border-charcoal/10">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+          <a href="mailto:hello@heifersociety.com" class="flex items-center gap-2 text-charcoal hover:text-oxblood transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" ry="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            hello@heifersociety.com
+          </a>
+          <a href="https://instagram.com/heifersociety" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-charcoal hover:text-oxblood transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://twitter.com/heifersociety" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-charcoal hover:text-oxblood transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
