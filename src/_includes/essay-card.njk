@@ -1,0 +1,19 @@
+<article class="group cursor-pointer">
+  <a href="{{ essay.url }}" class="block">
+    <div class="bg-gradient-to-br from-cream-dark/80 to-bone/60 rounded-2xl p-10 min-h-[240px] transition-all duration-300 group-hover:shadow-card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-micro text-oxblood">{{ essay.data.category | upper }}</span>
+        <span class="text-text-muted">·</span>
+        <span class="text-micro text-text-muted">{{ essay.data.date | postDate }}</span>
+      </div>
+      <h3 class="font-serif text-[26px] font-semibold text-charcoal mb-3 leading-tight group-hover:text-oxblood transition-colors duration-300">
+        {{ essay.data.title }}
+      </h3>
+      <p class="font-sans text-sm text-text-secondary leading-relaxed mb-6">{{ essay.data.excerpt }}</p>
+      <span class="inline-flex items-center gap-1 text-oxblood font-medium text-sm link-underline">
+        Read 
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </span>
+    </div>
+  </a>
+</article>
