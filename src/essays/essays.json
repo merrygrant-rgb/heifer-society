@@ -1,0 +1,5 @@
+{
+  "layout": "essay.njk",
+  "tags": ["essays"],
+  "permalink": "/essays/{{ title | slugify }}/"
+}
