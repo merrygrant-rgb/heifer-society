@@ -11,13 +11,26 @@ export const siteConfig = {
 
 export const navigation = [
   { label: 'About', href: '#breaking-point' },
-  { label: 'Journal', href: '#journal' },
+  { label: 'Journal', href: '/journals' },
+  { label: 'Shop', href: '/shop' },
+  { label: 'Work With Me', href: '/work-with-me' },
   { label: 'Manifesto', href: '/manifesto' },
   { label: 'Contact', href: '/contact' },
 ];
 
+// Journal type definition
+export interface Journal {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  slug: string;
+  content: string;
+}
+
 // Journal entries - easily add new entries here
-export const journals = [
+export const journals: Journal[] = [
   {
     id: 'cost-of-capable',
     title: 'The Cost of Being Capable',
@@ -388,3 +401,137 @@ export const footer = {
   tagline: 'Handle your own. With class.',
   copyright: '© 2025 Heifer Society. All rights reserved.',
 };
+
+// ============================================
+// PRODUCT TYPES & DATA
+// ============================================
+
+export interface Product {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  description: string;
+  price: number;
+  compareAtPrice?: number;
+  images: any[];
+  category: 'apparel' | 'accessories' | 'digital';
+  tags: string[];
+  inStock: boolean;
+  featured: boolean;
+}
+
+export const mockProducts: Product[] = [
+  {
+    _id: '1',
+    title: 'The Composed Tee',
+    slug: { current: 'the-composed-tee' },
+    description: 'Premium cotton tee in bone white. Minimal branding. Maximum impact.',
+    price: 68,
+    images: [],
+    category: 'apparel',
+    tags: ['apparel', 'basics'],
+    inStock: true,
+    featured: true,
+  },
+  {
+    _id: '2',
+    title: 'Handle Your Own Journal',
+    slug: { current: 'handle-your-own-journal' },
+    description: 'Linen-bound journal for the woman who writes her own rules. 200 pages.',
+    price: 42,
+    images: [],
+    category: 'accessories',
+    tags: ['journal', 'stationery'],
+    inStock: true,
+    featured: true,
+  },
+  {
+    _id: '3',
+    title: 'Boundaries Without Apology',
+    slug: { current: 'boundaries-without-apology' },
+    description: 'Digital guide to setting limits that stick. Instant download.',
+    price: 29,
+    images: [],
+    category: 'digital',
+    tags: ['digital', 'guide'],
+    inStock: true,
+    featured: false,
+  },
+  {
+    _id: '4',
+    title: 'Quiet Power Hoodie',
+    slug: { current: 'quiet-power-hoodie' },
+    description: 'Oversized hoodie in charcoal. For composed rebellion.',
+    price: 95,
+    compareAtPrice: 120,
+    images: [],
+    category: 'apparel',
+    tags: ['apparel', 'lounge'],
+    inStock: true,
+    featured: true,
+  },
+];
+
+// ============================================
+// COACHING SERVICE TYPES & DATA
+// ============================================
+
+export interface CoachingService {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  description: string;
+  fullDescription: any[];
+  price: string;
+  duration: string;
+  format: string;
+  includes: string[];
+  isAvailable: boolean;
+  featured: boolean;
+  bookingLink?: string;
+}
+
+export const mockServices: CoachingService[] = [
+  {
+    _id: '1',
+    title: 'The Clarity Session',
+    slug: { current: 'clarity-session' },
+    description: 'One intensive session to cut through the noise and find your direction.',
+    fullDescription: [],
+    price: '$350',
+    duration: '90 minutes',
+    format: 'Video call',
+    includes: ['Pre-session questionnaire', '90-minute intensive', 'Action plan summary'],
+    isAvailable: true,
+    featured: true,
+    bookingLink: '#',
+  },
+  {
+    _id: '2',
+    title: 'The Boundary Blueprint',
+    slug: { current: 'boundary-blueprint' },
+    description: 'Three sessions to build boundaries that hold without explanation.',
+    fullDescription: [],
+    price: '$900',
+    duration: '3 sessions',
+    format: 'Video calls',
+    includes: ['Boundary assessment', '3 x 60-minute sessions', 'Custom boundary scripts'],
+    isAvailable: true,
+    featured: true,
+    bookingLink: '#',
+  },
+  {
+    _id: '3',
+    title: 'The Ownership Intensive',
+    slug: { current: 'ownership-intensive' },
+    description: 'Six-month partnership for the woman ready to take up space.',
+    fullDescription: [],
+    price: '$4,500',
+    duration: '6 months',
+    format: 'Bi-weekly calls + Voxer support',
+    includes: ['Full assessment', 'Bi-weekly 60-min sessions', 'Unlimited Voxer access', 'Custom resources'],
+    isAvailable: true,
+    featured: false,
+    bookingLink: '#',
+  },
+];

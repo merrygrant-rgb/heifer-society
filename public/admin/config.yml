@@ -1,0 +1,82 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Journal"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["Essays", "Insights", "Resources"], default: "Essays" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "products"
+    label: "Shop Products"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Price", name: "price", widget: "number", value_type: "int" }
+      - { label: "Compare At Price", name: "compareAtPrice", widget: "number", value_type: "int", required: false }
+      - { label: "Category", name: "category", widget: "select", options: ["apparel", "accessories", "digital"] }
+      - { label: "Product Images", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+      - { label: "In Stock", name: "inStock", widget: "boolean", default: true }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
+  - name: "services"
+    label: "Coaching Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Full Description", name: "fullDescription", widget: "markdown" }
+      - { label: "Price", name: "price", widget: "string", hint: "e.g., $350" }
+      - { label: "Duration", name: "duration", widget: "string", hint: "e.g., 90 minutes" }
+      - { label: "Format", name: "format", widget: "string", hint: "e.g., Video call" }
+      - { label: "What's Included", name: "includes", widget: "list" }
+      - { label: "Available", name: "isAvailable", widget: "boolean", default: true }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Booking Link", name: "bookingLink", widget: "string", required: false }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "manifesto"
+        label: "Manifesto"
+        file: "content/pages/manifesto.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - name: "homepage"
+        label: "Homepage"
+        file: "content/pages/homepage.md"
+        fields:
+          - { label: "Hero Headline", name: "heroHeadline", widget: "string" }
+          - { label: "Hero Subheadline", name: "heroSubheadline", widget: "text" }
+          - { label: "Breaking Point Label", name: "breakingPointLabel", widget: "string" }
+          - { label: "Breaking Point Content", name: "breakingPointContent", widget: "markdown" }
