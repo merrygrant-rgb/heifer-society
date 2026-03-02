@@ -12,6 +12,12 @@ module.exports = function(eleventyConfig) {
     });
   });
   
+  // Limit filter for showing only N items
+  eleventyConfig.addFilter("limit", (arr, count) => {
+    if (!Array.isArray(arr)) return arr;
+    return arr.slice(0, count);
+  });
+  
   // Essay collection sorted by date (newest first)
   eleventyConfig.addCollection("essays", function(collectionApi) {
     return collectionApi.getFilteredByTag("essays").sort((a, b) => {
