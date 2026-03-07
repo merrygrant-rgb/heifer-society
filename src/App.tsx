@@ -8,7 +8,8 @@ import {
 import { 
   navigation, heroContent, breakingPoint, 
   whatIsAHeifer, theWork, footer, manifesto
-} from './data/site'; { 
+} from './data/site';
+import { 
   blogPosts, products, services,
   type Product, type CoachingService, type BlogPost
 } from './lib/content';
