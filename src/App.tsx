@@ -6,10 +6,9 @@ import {
   ShoppingBag, Clock, Check, Mail, Instagram, Twitter 
 } from 'lucide-react';
 import { 
-  siteConfig, navigation, heroContent, breakingPoint, 
+  navigation, heroContent, breakingPoint, 
   whatIsAHeifer, theWork, footer, manifesto
-} from './data/site';
-import { 
+} from './data/site'; { 
   blogPosts, products, services,
   type Product, type CoachingService, type BlogPost
 } from './lib/content';
