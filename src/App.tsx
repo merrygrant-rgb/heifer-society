@@ -225,9 +225,13 @@ const Navigation = ({ currentPage, onNavigate }: { currentPage: string; onNaviga
   
   return (
     <nav className="fixed top-0 left-0 w-full z-50 px-6 md:px-[6vw] py-6 flex justify-between items-center bg-bone/90 backdrop-blur-md">
-      <button onClick={() => onNavigate('home')} className="font-serif text-lg tracking-[0.3em] uppercase text-charcoal hover:text-oxblood transition-colors">
-        {siteConfig.name}
-      </button>
+    <button onClick={() => onNavigate('home')} className="hover:opacity-80 transition-opacity">
+  <img 
+    src="/Heifer Society Logo Only.png" 
+    alt="Heifer Society" 
+    className="h-8 w-auto"
+  />
+</button>
       
       <div className="hidden lg:flex items-center gap-6">
         {navItems.map((item) => (
