@@ -229,7 +229,7 @@ const Navigation = ({ currentPage, onNavigate }: { currentPage: string; onNaviga
   <img 
     src="/Heifer Society Logo Only.png" 
     alt="Heifer Society" 
-    className="h-8 w-auto"
+    className="h-10 w-auto"
   />
 </button>
       
