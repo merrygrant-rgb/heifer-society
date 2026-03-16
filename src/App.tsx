@@ -226,11 +226,11 @@ const Navigation = ({ currentPage, onNavigate }: { currentPage: string; onNaviga
   return (
     <nav className="fixed top-0 left-0 w-full z-50 px-6 md:px-[6vw] py-6 flex justify-between items-center bg-bone/90 backdrop-blur-md">
     <button onClick={() => onNavigate('home')} className="hover:opacity-80 transition-opacity">
-  <img 
-    src="/Heifer Society Logo Only.png" 
-    alt="Heifer Society" 
-    className="h-10 w-auto"
-  />
+ <img 
+  src="/Logo.svg" 
+  alt="Heifer Society" 
+  className="h-8 w-auto"
+/>
 </button>
       
       <div className="hidden lg:flex items-center gap-6">
@@ -306,6 +306,7 @@ const HomePage = ({ onNavigate }: { onNavigate: (page: PageType) => void }) => {
           </svg>
         </div>
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
+         <img src="/Logo.png" alt="Heifer Society" className="hero-wordmark h-24 w-auto mx-auto mb-8" />
           <h1 className="hero-headline font-serif text-headline text-charcoal font-semibold mb-8">{heroContent.headline}</h1>
           <p className="hero-subheadline font-sans text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl mx-auto mb-12 whitespace-pre-line">{heroContent.subheadline}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
@@ -634,25 +635,16 @@ const WorkWithMePage = ({ onNavigate }: { onNavigate: (page: PageType) => void }
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {servicesList.map((service, index) => (
-            <div key={service._id} className="service-card">
-              <ServiceCard service={service} onClick={() => {}} index={index} />
-            </div>
-          ))}
-        </div>
-        
-        <div className="bg-cream-dark rounded-2xl p-8 md:p-12">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-serif text-2xl text-charcoal mb-4">Not sure which option is right?</h2>
-            <p className="font-sans text-text-secondary mb-6">
-              Let's have a conversation. No pressure, no sales pitch. Just clarity on what you need.
-            </p>
-            <button onClick={() => onNavigate('contact')} className="btn-primary">
-              Book a Free Consultation <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
+        <div className="bg-cream-dark rounded-2xl p-12 text-center">
+  <h2 className="font-serif text-2xl text-charcoal mb-4">Coming Soon</h2>
+  <p className="font-sans text-text-secondary">
+    Coaching & training offerings are in development. 
+    Join the list to be notified when doors open.
+  </p>
+  <button onClick={() => onNavigate('contact')} className="btn-primary mt-8">
+    Join the List <ArrowRight className="w-4 h-4" />
+  </button>
+</div>
       </div>
     </div>
   );
